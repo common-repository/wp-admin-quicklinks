@@ -1,0 +1,78 @@
+/*
+===========================================================================
+Plugin Name: WP Admin Quicklinks
+Plugin URI: http://www.tmrw.co.uk/blog/wp-admin-quicklinks-plugin/
+Version: 1.01
+Author: Rich Hinchcliffe
+Author URI: http://www.tmrw.co.uk/
+---------------------------------------------------------------------------
+NOTES:
+lots of "!important" declarations are used below to hopefully over-ride any
+styles inherited from the your theme's style.css file
+===========================================================================
+*/
+#wp-admin-quicklinks {
+  position:fixed;
+  /*override ie6 only, becasue the position:fixed won't work*/
+  _position:absolute;
+  top:5px;
+  right:5px;
+  z-index:1000;
+  text-align:right;
+  background:#fff;
+  border:1px solid #ccc;
+  padding:5px;
+  opacity:0.25;
+  filter:alpha(opacity=25);
+  /*override ie6 only, becasue the :hover on the div won't work*/
+  _filter:alpha(opacity=100);
+  /*IE (all versions) won't see these rounded corners - ah well, never mind*/
+	-moz-border-radius: 4px;
+  -khtml-border-radius: 4px;
+  -webkit-border-radius: 4px;
+  border-radius: 4px;
+}
+#wp-admin-quicklinks:hover {
+  opacity:0.95;
+  filter:alpha(opacity=95);
+}
+#wp-admin-quicklinks ul {
+	/*ordinarily I'd use em's for font-sizes, but in this case px is used to force a common small size to work in most wp themes */
+	font:normal 11px "Lucida Grande", Verdana, Arial, "Bitstream Vera Sans", sans-serif!important;
+  list-style:none;
+  margin:0!important;
+  padding:0!important;
+}
+#wp-admin-quicklinks ul#wp-admin-quicklinks-page-items {
+  margin:0 0 6px 0!important;
+  padding:0 0 3px 0!important;
+  font-weight:bold!important;
+  border-bottom:1px dotted #ccc!important;
+}
+#wp-admin-quicklinks ul li {
+  margin:0 0 2px 0!important;
+}
+#wp-admin-quicklinks ul li a {
+  color:#888!important;
+  text-decoration:none!important;
+  padding:2px 3px!important;
+  /*IE (all versions) won't see these rounded corners - ah well, never mind*/
+	-moz-border-radius: 2px;
+  -khtml-border-radius: 2px;
+  -webkit-border-radius: 2px;
+  border-radius: 2px;
+}
+#wp-admin-quicklinks ul li a:hover,
+#wp-admin-quicklinks ul li a:focus,
+#wp-admin-quicklinks ul li a:active {
+  color:#fff!important;
+  background:#999!important;
+}
+#wp-admin-quicklinks ul li#wp-admin-quicklinks-logout a {
+  font-weight:bold!important;
+}
+#wp-admin-quicklinks ul li#wp-admin-quicklinks-logout a:hover,
+#wp-admin-quicklinks ul li#wp-admin-quicklinks-logout a:focus,
+#wp-admin-quicklinks ul li#wp-admin-quicklinks-logout a:active {
+  background:#CC0000!important;
+}
